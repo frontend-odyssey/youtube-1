@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        background-color: black;
+      }
+
+      h1 {
+        color: white;
+      }
+
+      img {
+        width: 500px;
+        height: 500px;
+        border-radius: 18px;
+      }
+
+      button {
+        all: unset;
+        font-size: 14px;
+        color: black;
+        border-radius: 6px;
+        background: white;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.2s ease all;
+        width: 500px;
+        padding: 8px;
+      }
+
+      a {
+        color: rgb(49, 212, 253);
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      body {
+        font-family: "Inter";
+      }
+
+      button {
+        box-sizing: border-box;
+      }
+
+      a {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Котик</h1>
+
+    <img src="котик.png" width="500" height="500" />
+
+    <button>Сделай МЯУ</button>
+
+    <a href="https://www.youtube.com/@frontend.odyssey">
+      Ссылка на frontend odyssey
+    </a>
+
+    <audio src="мяу.mp3" preload="auto"></audio>
+    <script>
+      const button = document.querySelector("button");
+      const meow = document.querySelector("audio");
+      const catImage = document.querySelector("img");
+
+      button.addEventListener("click", () => {
+        meow.currentTime = 0;
+        meow.play();
+
+        catImage.src = "котик-мяу.png";
+
+        setTimeout(() => {
+          catImage.src = "котик.png";
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
